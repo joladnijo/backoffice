@@ -1,0 +1,28 @@
+{
+  "root": "apps/iroda-e2e",
+  "sourceRoot": "apps/iroda-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/iroda-e2e/cypress.json",
+        "devServerTarget": "iroda:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "iroda:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/iroda-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["iroda"]
+}
