@@ -1,0 +1,83 @@
+$menu-base-background-color: #1B2430;
+$menu-base-color: #eee;
+$menu-dark-background-color: #232F3E;
+$content-background-color: #F9F9FC;
+
+.main-container {
+  height: 100%;
+}
+
+.menu {
+  background-color: $menu-base-background-color;
+  color: $menu-base-color;
+  text-align: center;
+  font-size: 14px;
+
+  .logo {
+    background-color: $menu-dark-background-color;
+    background-image: url("/assets/ui/transparent-logo-w-text-for-dark.svg");
+    background-repeat: no-repeat;
+    background-size: 66px;
+    background-position: 27px 17px;
+    height: 64px;
+  }
+
+  hr {
+    border: 1px inset #777;
+  }
+
+  .nav-menu-item {
+    display: block;
+    text-align: left;
+    padding: 0.8em 1.5em 0.8em 1em;
+    cursor: pointer;
+    .suffix {
+      float: right;
+      vertical-align: middle;
+    }
+    .prefix {
+      padding: 0 0.8em;
+      font-size: 1.2em;
+      margin-bottom: -2px;
+      vertical-align: middle;
+    }
+  }
+
+  .footer {
+    background-color: $menu-dark-background-color;
+  }
+
+  mat-form-field {
+    width: 230px;
+  }
+
+  .mat-form-field-appearance-outline {
+    .mat-form-field-outline-start,
+    .mat-form-field-outline-end,
+    .mat-form-field-outline-gap {
+      border-radius: 0;
+      border: none;
+    }
+
+    .mat-select-placeholder {
+      color: white;
+    }
+  }
+
+  .mat-select-value {
+    color: $menu-base-color;
+  }
+
+  .mat-form-field-outline {
+    background-color: #000;
+  }
+}
+
+.content {
+  background-color: $content-background-color;
+  padding: 2.5em;
+}
+
+footer, .footer {
+  min-height: 64px;
+}

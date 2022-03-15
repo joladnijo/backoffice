@@ -1,7 +1,12 @@
 {
   "version": 2,
   "projects": {
+    "aid-center-editor": "libs/aid-center-editor",
+    "asset-request-editor": "libs/asset-request-editor",
+    "backend-model": "libs/backend-model",
     "iroda": "apps/iroda",
-    "iroda-e2e": "apps/iroda-e2e"
+    "iroda-e2e": "apps/iroda-e2e",
+    "organization-editor": "libs/organization-editor",
+    "ui": "libs/ui"
   }
 }

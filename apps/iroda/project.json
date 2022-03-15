@@ -2,11 +2,13 @@
   "projectType": "application",
   "root": "apps/iroda",
   "sourceRoot": "apps/iroda/src",
-  "prefix": "joladnijo-backoffice",
+  "prefix": "jb-app",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/iroda",
         "index": "apps/iroda/src/index.html",
@@ -14,9 +16,22 @@
         "polyfills": "apps/iroda/src/polyfills.ts",
         "tsConfig": "apps/iroda/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/iroda/src/favicon.ico", "apps/iroda/src/assets"],
-        "styles": ["apps/iroda/src/styles.scss"],
-        "scripts": []
+        "assets": [
+          "apps/iroda/src/favicon.ico",
+          "apps/iroda/src/assets",
+          "apps/iroda/src/manifest.webmanifest",
+          {
+            "input": "libs/ui/src/assets",
+            "glob": "**/*",
+            "output":"assets/ui"
+          }
+        ],
+        "styles": [
+          "apps/iroda/src/styles.scss"
+        ],
+        "scripts": [],
+        "serviceWorker": true,
+        "ngswConfigPath": "apps/iroda/ngsw-config.json"
       },
       "configurations": {
         "production": {
@@ -80,7 +95,9 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/iroda"],
+      "outputs": [
+        "coverage/apps/iroda"
+      ],
       "options": {
         "jestConfig": "apps/iroda/jest.config.js",
         "passWithNoTests": true

@@ -1,0 +1,46 @@
+{
+  "projectType": "library",
+  "root": "libs/asset-request-editor",
+  "sourceRoot": "libs/asset-request-editor/src",
+  "prefix": "joladnijo-backoffice",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": [
+        "dist/libs/asset-request-editor"
+      ],
+      "options": {
+        "project": "libs/asset-request-editor/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/asset-request-editor/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/asset-request-editor/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/libs/asset-request-editor"
+      ],
+      "options": {
+        "jestConfig": "libs/asset-request-editor/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/asset-request-editor/src/**/*.ts",
+          "libs/asset-request-editor/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

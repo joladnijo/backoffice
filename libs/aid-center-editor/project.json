@@ -1,0 +1,46 @@
+{
+  "projectType": "library",
+  "root": "libs/aid-center-editor",
+  "sourceRoot": "libs/aid-center-editor/src",
+  "prefix": "joladnijo-backoffice",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": [
+        "dist/libs/aid-center-editor"
+      ],
+      "options": {
+        "project": "libs/aid-center-editor/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/aid-center-editor/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/aid-center-editor/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/libs/aid-center-editor"
+      ],
+      "options": {
+        "jestConfig": "libs/aid-center-editor/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/aid-center-editor/src/**/*.ts",
+          "libs/aid-center-editor/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

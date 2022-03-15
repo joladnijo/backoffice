@@ -14,7 +14,21 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@joladnijo-backoffice/aid-center-editor": [
+        "libs/aid-center-editor/src/index.ts"
+      ],
+      "@joladnijo-backoffice/asset-request-editor": [
+        "libs/asset-request-editor/src/index.ts"
+      ],
+      "@joladnijo-backoffice/backend-model": [
+        "libs/backend-model/src/index.ts"
+      ],
+      "@joladnijo-backoffice/organization-editor": [
+        "libs/organization-editor/src/index.ts"
+      ],
+      "@joladnijo-backoffice/ui": ["libs/ui/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

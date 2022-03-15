@@ -1,1 +1,60 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+@include mat-core();
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+}
+
+//FIXME: színek közelítése, ez alapján: https://octoperf.com/blog/2021/01/08/angular-material-multiple-themes/#install-material-design
+
+// fixme megkeresni a két palettának a megfelelő színeket
+// a tartalomban megjelenő elemek
+$light-app-theme: mat-light-theme((
+  color: (
+    primary: $mat-grey-palette,
+    accent: mat-palette($mat-gray, A200, A100, A400),
+    warn: $mat-grey-palette,
+  )
+));
+
+// jellemzően a menüben megjelenő elemekhez
+$dark-app-theme: mat-dark-theme((
+  color: (
+    primary: $mat-grey-palette,
+    accent: mat-palette($mat-gray, A200, A100, A400),
+    warn: $mat-grey-palette,
+  )
+));
+
+@include angular-material-theme($light-app-theme);
+
+.dark-theme {
+  @include angular-material-color($dark-app-theme);
+}
+
+@import "./styles/typography";
+
+mat-ink-bar {
+  background-color: #1E88E5;
+}
+
+.mat-tab-label, .mat-tab-link {
+  font-size: 13px;
+  text-transform: uppercase;
+  color: rgba(0,0,0,0.87);
+}
+
+.mat-tab-label-active {
+  color: #000;
+}
+
+.container-box {
+  background: #FFFFFF;
+  box-shadow: 0px 0px 14px rgba(53, 64, 82, 0.05);
+}
+
