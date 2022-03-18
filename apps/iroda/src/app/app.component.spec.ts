@@ -1,11 +1,34 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-// import { NxWelcomeComponent } from './nx-welcome.component';
+import { UiModule } from '@joladnijo-backoffice/ui';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterTestingModule } from '@angular/router/testing';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatSelectModule } from '@angular/material/select';
+import { FontAwesomeTestingModule } from '@fortawesome/angular-fontawesome/testing';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AppComponent],
+      imports: [
+        NoopAnimationsModule,
+        UiModule,
+        RouterTestingModule.withRoutes(
+          [{
+            path: "**",
+            component: AppComponent
+          }]
+        ),
+        MatFormFieldModule,
+        MatTabsModule,
+        MatSelectModule,
+        FontAwesomeTestingModule
+      ],
+      declarations: [
+        AppComponent
+      ],
+      providers: []
     }).compileComponents();
   });
 
@@ -15,18 +38,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'iroda'`, () => {
+  it(`should have foot menu items'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('iroda');
+    expect(app.footMenuItems.length > 0).toBeTruthy();
   });
 
-  it('should render title', () => {
+  it('should render menu logo', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain(
-      'Welcome iroda'
-    );
+    expect(compiled.querySelector('div.logo')).not.toBe(null);
   });
 });

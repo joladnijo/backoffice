@@ -1,0 +1,16 @@
+@import '~@angular/material/theming';
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+
+@import "./styles/material_theme";
+@import "./styles/mat_components";
+@import "./styles/typography";
+
+@import "./styles/components";

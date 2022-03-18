@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component } from '@angular/core';
 /**
  * DashboardLayoutComponent
  *
@@ -11,7 +11,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 @Component({
   selector: 'jb-ui-dashboard-layout',
   template: `
-    <div class="main-container"
+    <div class="dashboard-main-layout"
          gdAreas.xs="menu | content | footer"
          gdRows.xs="auto 1fr auto"
          gdColumns.xs="none"
@@ -42,7 +42,6 @@ import { Component, ViewEncapsulation } from '@angular/core';
     </div>
   `,
   styleUrls: ['./dashboard-layout.component.scss'],
-  encapsulation: ViewEncapsulation.None
 })
 export class DashboardLayoutComponent {
 }

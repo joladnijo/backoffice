@@ -1,0 +1,26 @@
+//FIXME: színek közelítése, ez alapján: https://octoperf.com/blog/2021/01/08/angular-material-multiple-themes/#install-material-design
+@include mat-core();
+// fixme megkeresni a két palettának a megfelelő színeket
+// a tartalomban megjelenő elemek
+$light-app-theme: mat-light-theme((
+  color: (
+    primary: $mat-grey-palette,
+    accent: mat-palette($mat-gray, A200, A100, A400),
+    warn: $mat-grey-palette,
+  )
+));
+
+// jellemzően a menüben megjelenő elemekhez
+$dark-app-theme: mat-dark-theme((
+  color: (
+    primary: $mat-grey-palette,
+    accent: mat-palette($mat-gray, A200, A100, A400),
+    warn: $mat-grey-palette,
+  )
+));
+
+@include angular-material-theme($light-app-theme);
+
+.dark-theme {
+  @include angular-material-color($dark-app-theme);
+}

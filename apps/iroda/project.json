@@ -27,7 +27,8 @@
           }
         ],
         "styles": [
-          "apps/iroda/src/styles.scss"
+          "apps/iroda/src/styles.scss",
+          "libs/ui/src/styles.scss"
         ],
         "scripts": [],
         "serviceWorker": true,
