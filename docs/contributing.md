@@ -1,9 +1,23 @@
 # Hozzájárulás
 
+## Tech Stack
+
+- [Angular](https://angular.io) 13+
+- [Nx](https://nx.dev)
+- [NgRX](https://ngrx.io)
+- [Auth0](https://auth0.com) Authentikáció és authorizáció alapokhoz
+- [Angular Material](https://material.angular.io)
+- [Angular Flex layout](https://github.com/angular/flex-layout)
+- Apróbb utility-libek (ngneat/until-destroy)
+
+A backend kommunikáció NgRX/Data-n keresztül lesz megvalósítva, egy Backend által adott OpenAPI json-ből generált
+modellek segítségével. Auth0 -t fogunk használni (angular-oauth2-oidc modullal), jelenleg nincs integrálva az
+alkalmazásba.
+
 Ha elkészültél valamivel, egy ESLint-et, unit teszteket (Jasmine) futtass rajta, hibátlan futtatás a PR elfogadásának
 előfeltétele.
 
-### Általános irányok
+## Általános irányok
 
 - Mivel az alkalmazást nem kizárt, hogy terepen fogják használni (értsd: a felhasználók olyan emberek akik fáradtak,
   nyűgösek, egész nap pakoltak, talpon voltak, nem látnak jól, figyelmetlenek, megharapták a kutyát) így a könnyen
@@ -18,29 +32,35 @@ előfeltétele.
   fogjuk elfogadni, MVP 2 után minden végleges feature-nél jelentős teszt-lefedettség szükséges (TDD előnyben, ha
   megoldható!).
 
-### Kezdő Angular fejlesztőként
+## Elsődleges kommunikáció
+A #frontend csatornánk [slacken](https://github.com/joladnijo/joladnijo-docs#a-csapat) elérhető, ott lehet bármit kérdezni ha bizonytalan vagy.
+
+## Kezdő Angular fejlesztőként
 
 Sitebuild, scss, css simogatás az ui lib-en belül nagyon hasznos része tud lenni a folyamatoknak és nem szükséges hozzá
 fekete öves Ngrx és egyéb ismeret. Láttál a terveken egy komponenst, formot ami még nincs kész? Ne fogd vissza magad, ha
 a vázát, kinézetét úgy gondolod össze tudod rakni, az is rengeteget segít.
 
-### Gyakorlott Angular fejlesztőként
+## Gyakorlott Angular fejlesztőként
 
-Nézz körül, ugorj neki valaminek :)
+Nézz körül, ugorj neki valaminek, lib-be kerülő Readme-ket tanulmányozd mielőtt megvalósítasz bármit is.
 
-# Tech Stack
+# Alkalmazás felépítése
+## Backoffice App
+- Funkciók összefogása, működésükhöz szükséges összekötések megvalósítása
+- Routing (funkció oldalak routingja) & Funkció on-demand lazy load
+- PWA funkciók kezelése (MVP 2 után)
+- Autentikáció és autorizációs kommunikáció 
+  - felhasználó beléptetése
+  - jogosultságainak betöltése
+  - jogosultságfüggő funkciók elérésének korlátozása (Routing & Menü kezelés)
 
-- [Angular](https://angular.io) 13+
-- [Nx](https://nx.dev)
-- [NgRX](https://ngrx.io)
-- [Auth0](https://auth0.com) Authentikáció és authorizáció alapokhoz
-- [Angular Material](https://material.angular.io)
-- [Angular Flex layout](https://github.com/angular/flex-layout)
-- Apróbb utility-libek (ngneat/until-destroy)
+# Funkciók (feature)
 
-A backend kommunikáció NgRX/Data-n keresztül lesz megvalósítva, egy Backend által adott OpenAPI json-ből generált
-modellek segítségével. Auth0 -t fogunk használni (angular-oauth2-oidc modullal), jelenleg nincs integrálva az
-alkalmazásba.
+### Szervezet-kezelés - [`feature-org-management` README](../libs/feature-org-management/README.md)
+Minden szervezettel kapcsolatos funkció, lásd vonatkozó README.md
+### Asset kezelés - [`feature-asset-management` README](../libs/feature-asset-management/README.md)
+Minden erőforrás kezeléssel kapcsolatos funkció, lásd vonatkozó README.md
 
 ## Generate a library
 

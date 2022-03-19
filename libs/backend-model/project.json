@@ -6,9 +6,7 @@
   "targets": {
     "build": {
       "executor": "@nrwl/angular:ng-packagr-lite",
-      "outputs": [
-        "dist/libs/backend-model"
-      ],
+      "outputs": ["dist/libs/backend-model"],
       "options": {
         "project": "libs/backend-model/ng-package.json"
       },
@@ -24,9 +22,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": [
-        "coverage/libs/backend-model"
-      ],
+      "outputs": ["coverage/libs/backend-model"],
       "options": {
         "jestConfig": "libs/backend-model/jest.config.js",
         "passWithNoTests": true
@@ -42,5 +38,5 @@
       }
     }
   },
-  "tags": []
+  "tags": ["scope:shared"]
 }

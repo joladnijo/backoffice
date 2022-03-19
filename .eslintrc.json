@@ -22,10 +22,20 @@
             "allow": [],
             "depConstraints": [
               {
-                "sourceTag": "*",
+                "sourceTag": "scope:app",
                 "onlyDependOnLibsWithTags": [
-                  "*"
+                  "scope:feature", "scope:shared"
                 ]
+              },
+              {
+                "sourceTag": "scope:feature",
+                "onlyDependOnLibsWithTags": [
+                  "scope:shared"
+                ]
+              },
+              {
+                "sourceTag": "scope:shared",
+                "onlyDependOnLibsWithTags": []
               }
             ]
           }

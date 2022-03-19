@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/feature-asset-management",
+  "sourceRoot": "libs/feature-asset-management/src",
+  "prefix": "jb-asset",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/feature-asset-management"],
+      "options": {
+        "jestConfig": "libs/feature-asset-management/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/feature-asset-management/src/**/*.ts",
+          "libs/feature-asset-management/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["scope:feature"]
+}

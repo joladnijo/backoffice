@@ -24,8 +24,11 @@
       "@joladnijo-backoffice/backend-model": [
         "libs/backend-model/src/index.ts"
       ],
-      "@joladnijo-backoffice/organization-editor": [
-        "libs/organization-editor/src/index.ts"
+      "@joladnijo-backoffice/feature-asset-management": [
+        "libs/feature-asset-management/src/index.ts"
+      ],
+      "@joladnijo-backoffice/feature-org-management": [
+        "libs/feature-org-management/src/index.ts"
       ],
       "@joladnijo-backoffice/ui": ["libs/ui/src/index.ts"]
     }

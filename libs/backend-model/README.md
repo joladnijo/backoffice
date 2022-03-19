@@ -1,6 +1,8 @@
 # backend-model
 
-This library was generated with [Nx](https://nx.dev).
+A lib jelentős része (`/src/lib/*`) a backend által generált OpenAPI JSON-ön alapul, azt kézzel ne szerkeszd. 
+
+Az ESLint szabályok a `/src/lib/*` -ben helyet foglaló fájlokra nem érvényesek. Nem generált tartalom nem kerülhet oda.
 
 ## Running unit tests
 

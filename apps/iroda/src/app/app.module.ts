@@ -18,6 +18,7 @@ import { EntityDataModule } from '@ngrx/data';
 import { entityConfig } from './entity-metadata';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './modules/app-routing.module';
+import { FeatureAssetManagementModule } from '@joladnijo-backoffice/feature-asset-management';
 
 @NgModule({
   declarations: [AppComponent],
@@ -39,7 +40,7 @@ import { AppRoutingModule } from './modules/app-routing.module';
     EffectsModule.forRoot([]),
     AppRoutingModule,
     StoreRouterConnectingModule.forRoot(),
-    EntityDataModule.forRoot(entityConfig),
+    EntityDataModule.forRoot(entityConfig), FeatureAssetManagementModule
   ],
   providers: [],
   bootstrap: [AppComponent]

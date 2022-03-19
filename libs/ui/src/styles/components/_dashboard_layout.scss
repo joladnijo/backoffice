@@ -94,7 +94,7 @@ $content-background-color: #F9F9FC;
     }
   }
 
-  .content {
+  & > .content {
     background-color: $content-background-color;
     padding: 2.5em;
   }
