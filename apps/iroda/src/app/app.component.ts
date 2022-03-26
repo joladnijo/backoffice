@@ -8,7 +8,6 @@ import { faCog } from '@fortawesome/free-solid-svg-icons/faCog';
   selector: 'jb-app-root',
   template: `
     <jb-ui-dashboard-layout>
-
       <ng-container dashboard-menu>
         <mat-form-field appearance="outline">
           <mat-select placeholder="Válasszon szervezetet">
@@ -47,14 +46,7 @@ import { faCog } from '@fortawesome/free-solid-svg-icons/faCog';
               <ng-container layout-content>
                 <div class="container-box">
                   <h3>Hírfolyam</h3>
-                  <mat-form-field>
-                    <mat-label>Select an option</mat-label>
-                    <mat-select>
-                      <mat-option value="1">Option 1</mat-option>
-                      <mat-option value="2">Option 2</mat-option>
-                      <mat-option value="3">Option 3</mat-option>
-                    </mat-select>
-                  </mat-form-field>
+                  <jb-asset-request-list-editor></jb-asset-request-list-editor>
                 </div>
                 <div class="container-box">
                   <jb-asset-request-list>

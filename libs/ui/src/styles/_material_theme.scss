@@ -1,26 +1,67 @@
-//FIXME: színek közelítése, ez alapján: https://octoperf.com/blog/2021/01/08/angular-material-multiple-themes/#install-material-design
-@include mat-core();
-// fixme megkeresni a két palettának a megfelelő színeket
-// a tartalomban megjelenő elemek
-$light-app-theme: mat-light-theme((
+//FIXME: színek közelítése, ez alapján: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+@use "utils/palette-helper";
+
+@include mat.core(mat.define-typography-config($font-family: 'Nunito, sans-serif'));
+
+$light-primary: mat.define-palette(mat.$indigo-palette);
+$light-accent: mat.define-palette(mat.$pink-palette);
+$light-app-theme: mat.define-light-theme((
   color: (
-    primary: $mat-grey-palette,
-    accent: mat-palette($mat-gray, A200, A100, A400),
-    warn: $mat-grey-palette,
+    primary: $light-primary,
+    accent: $light-accent,
   )
 ));
 
 // jellemzően a menüben megjelenő elemekhez
-$dark-app-theme: mat-dark-theme((
+$dark-primary: mat.define-palette(mat.$blue-palette);
+$dark-accent: mat.define-palette(mat.$blue-gray-palette);
+$dark-app-theme-main: mat.define-dark-theme((
   color: (
-    primary: $mat-grey-palette,
-    accent: mat-palette($mat-gray, A200, A100, A400),
-    warn: $mat-grey-palette,
-  )
+    primary: $dark-primary,
+    accent: $dark-accent,
+  ),
+  background: $dark-background-color,
 ));
 
-@include angular-material-theme($light-app-theme);
+@include mat.all-component-themes($light-app-theme);
+$dark-app-theme: palette-helper.modify-background($dark-app-theme-main, $dark-background-color);
 
 .dark-theme {
-  @include angular-material-color($dark-app-theme);
+  background-color: $dark-background-color;
+  @include mat.core-theme($dark-app-theme);
+  @include mat.autocomplete-theme($dark-app-theme);
+  @include mat.badge-theme($dark-app-theme);
+  @include mat.bottom-sheet-theme($dark-app-theme);
+  @include mat.button-theme($dark-app-theme);
+  @include mat.button-toggle-theme($dark-app-theme);
+  @include mat.card-theme($dark-app-theme);
+  @include mat.checkbox-theme($dark-app-theme);
+  @include mat.chips-theme($dark-app-theme);
+  @include mat.table-theme($dark-app-theme);
+  @include mat.datepicker-theme($dark-app-theme);
+  @include mat.dialog-theme($dark-app-theme);
+  @include mat.divider-theme($dark-app-theme);
+  @include mat.expansion-theme($dark-app-theme);
+  @include mat.form-field-theme($dark-app-theme);
+  @include mat.grid-list-theme($dark-app-theme);
+  @include mat.icon-theme($dark-app-theme);
+  @include mat.input-theme($dark-app-theme);
+  @include mat.list-theme($dark-app-theme);
+  @include mat.menu-theme($dark-app-theme);
+  @include mat.paginator-theme($dark-app-theme);
+  @include mat.progress-bar-theme($dark-app-theme);
+  @include mat.progress-spinner-theme($dark-app-theme);
+  @include mat.radio-theme($dark-app-theme);
+  @include mat.select-theme($dark-app-theme);
+  @include mat.sidenav-theme($dark-app-theme);
+  @include mat.slide-toggle-theme($dark-app-theme);
+  @include mat.slider-theme($dark-app-theme);
+  @include mat.stepper-theme($dark-app-theme);
+  @include mat.sort-theme($dark-app-theme);
+  @include mat.tabs-theme($dark-app-theme);
+  @include mat.toolbar-theme($dark-app-theme);
+  @include mat.tooltip-theme($dark-app-theme);
+  @include mat.tree-theme($dark-app-theme);
+  @include mat.snack-bar-theme($dark-app-theme);
 }

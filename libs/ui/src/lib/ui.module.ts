@@ -9,18 +9,22 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AidcenterLayoutComponent } from './component/aidcenter-layout/aidcenter-layout.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { PaletteTestComponent } from './component/palette-test/palette-test.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
-  imports: [CommonModule, FlexLayoutModule, RouterModule, MatTooltipModule, FontAwesomeModule, MatFormFieldModule, MatSelectModule],
+    imports: [CommonModule, FlexLayoutModule, RouterModule, MatTooltipModule, FontAwesomeModule, MatFormFieldModule, MatSelectModule, MatButtonModule],
   declarations: [
     DashboardLayoutComponent,
     FootMenulistComponent,
-    AidcenterLayoutComponent
+    AidcenterLayoutComponent,
+    PaletteTestComponent
   ],
   exports: [
     DashboardLayoutComponent,
     FootMenulistComponent,
-    AidcenterLayoutComponent
+    AidcenterLayoutComponent,
+    PaletteTestComponent
   ]
 })
 export class UiModule {}

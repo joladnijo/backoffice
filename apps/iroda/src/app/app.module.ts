@@ -19,29 +19,30 @@ import { entityConfig } from './entity-metadata';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './modules/app-routing.module';
 import { FeatureAssetManagementModule } from '@joladnijo-backoffice/feature-asset-management';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, ServiceWorkerModule.register('ngsw-worker.js', {
-    enabled: environment.production,
-    // Register the ServiceWorker as soon as the app is stable
-    // or after 30 seconds (whichever comes first).
-    registrationStrategy: 'registerWhenStable:30000'
-  }),
-    BrowserAnimationsModule,
-    HttpClientModule,
-    UiModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    FontAwesomeModule,
-    MatTabsModule,
-    StoreModule.forRoot({}, {}),
-    StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
-    EffectsModule.forRoot([]),
-    AppRoutingModule,
-    StoreRouterConnectingModule.forRoot(),
-    EntityDataModule.forRoot(entityConfig), FeatureAssetManagementModule
-  ],
+    imports: [BrowserModule, ServiceWorkerModule.register('ngsw-worker.js', {
+        enabled: environment.production,
+        // Register the ServiceWorker as soon as the app is stable
+        // or after 30 seconds (whichever comes first).
+        registrationStrategy: 'registerWhenStable:30000'
+    }),
+        BrowserAnimationsModule,
+        HttpClientModule,
+        UiModule,
+        MatFormFieldModule,
+        MatSelectModule,
+        FontAwesomeModule,
+        MatTabsModule,
+        StoreModule.forRoot({}, {}),
+        StoreDevtoolsModule.instrument({maxAge: 25, logOnly: environment.production}),
+        EffectsModule.forRoot([]),
+        AppRoutingModule,
+        StoreRouterConnectingModule.forRoot(),
+        EntityDataModule.forRoot(entityConfig), FeatureAssetManagementModule, MatButtonModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

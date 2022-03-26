@@ -7,10 +7,8 @@ html, body {
 body {
   margin: 0;
 }
-
-
-@import "./styles/material_theme";
-@import "./styles/mat_components";
+@import "./styles/variables";
 @import "./styles/typography";
+@import "./styles/material_theme";
 
 @import "./styles/components";
